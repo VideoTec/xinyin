@@ -1,0 +1,10 @@
+[package]
+name = "xinyin-cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+inquire = "0.7.5"
+xinyin = { path = "../xinyin", default-features = false, features = [
+    "generate",
+] }

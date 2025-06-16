@@ -1,0 +1,19 @@
+[package]
+name = "xinyin-wasm"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+anyhow = "1.0.98"
+wasm-bindgen = "0.2.100"
+xinyin = { path = "../xinyin", version = "0.1.0", features = [
+    "generate",
+    "import",
+    "sks",
+] }
+getrandom = { version = "0.3.3", features = ["wasm_js"] }
+js-sys = "0.3.77"
+web-sys = { version = "0.3.77", features = ["console", "Storage"] }
