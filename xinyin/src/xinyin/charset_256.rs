@@ -10,11 +10,11 @@ const WORDS: &str = include_str!("../../8105.bin");
 /// * start: 1-based index
 fn read_8105_slice(start: usize, len: usize) -> Result<Vec<char>> {
     if start < 1 || start > 7605 {
-        bail!("start must be between 1 and 7605");
+        bail!("start({}) must be between 1 and 7605", start);
     }
 
     if len < 500 {
-        bail!("count must be greater than 500");
+        bail!("count({}) must be greater than 500", len);
     }
 
     let words = WORDS
@@ -34,7 +34,7 @@ pub(super) fn generate_256_words(
     count: usize,
 ) -> Result<Vec<char>> {
     if start < 1 || start > 7600 {
-        bail!("start must be between 1 and 7600");
+        bail!("start({}) must be between 1 and 7600", start);
     }
 
     if count <= 500 || count + start > 8105 {
