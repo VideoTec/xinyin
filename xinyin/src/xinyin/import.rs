@@ -50,6 +50,7 @@ mod tests {
 
     #[test]
     fn test_import_words32() {
+        // 2gWUYMLPqVpqXnRdrF8h1s1p3y3C2xtrxQjyEzHgbEBG
         let secret_key = import_words32(
             "问抖廷亿丙驯弗付屹节尔力麦叮计寻右右问丑幻坏丙忆天闪父旬力扑抖延",
             "不立文字",
