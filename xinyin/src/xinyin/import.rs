@@ -1,5 +1,5 @@
 use super::charset_256::generate_256_words;
-use anyhow::{Context, Result};
+use anyhow::{Context, Result, bail};
 
 /// 导入心印密钥
 pub fn import_words32(
@@ -11,9 +11,17 @@ pub fn import_words32(
     let words = generate_256_words(txt_in_heart, start, count)
         .context("failed to generate Charset256 words")?;
 
+    let words32chars = words32.chars().collect::<Vec<char>>();
+    if words32chars.len() != 32 {
+        bail!(
+            "words32 must be exactly 32 characters, but got {}",
+            words32chars.len()
+        );
+    }
+
     let mut key = [0u8; 32];
-    for (i, word) in words32.chars().enumerate() {
-        let index = words.iter().position(|&w| w == word).context(format!(
+    for (i, word) in words32chars.iter().enumerate() {
+        let index = words.iter().position(|&w| w == *word).context(format!(
             "failed to import xinyin words32: word `{}` not found in 256-words",
             word
         ))?;
