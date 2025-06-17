@@ -3,7 +3,7 @@ use xinyin::sks::SksStore;
 use wasm_bindgen::{JsValue, prelude::wasm_bindgen};
 use xinyin::{EncryptedSk, generate_words32, import_words32};
 
-#[wasm_bindgen(raw_module = "/xinyin-worker.js")]
+#[wasm_bindgen(raw_module = "./xinyin-worker.js")]
 extern "C" {
     #[wasm_bindgen(js_name = saveEncryptedSkBase64)]
     fn js_save_encrypted_sk_base64(sk: &str);
