@@ -10,6 +10,7 @@ use std::{
     sync::{Arc, LazyLock, RwLock},
 };
 use utils::{aes_gcm_decrypt, aes_gcm_encrypt};
+// use web_sys::console;
 
 const SALT_SIZE: usize = 16;
 const NONCE_SIZE: usize = 12;
@@ -67,6 +68,8 @@ impl EncryptedSk {
         }
 
         let address = address.to_string();
+        // console::log_1(&format!("get encrypted sk by address: {}", address).into());
+        // console::log_1(&format!("pwd: {}", pwd).into());
 
         for encrypted_sk_base64 in store.load_encrypted_sks() {
             let encrypted_sk = Self::from_base64(&encrypted_sk_base64, &address)

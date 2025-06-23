@@ -18,6 +18,9 @@ ed25519-dalek = { version = "2.1.1", optional = true }
 base64 = { version = "0.22.1", optional = true }
 getrandom = "0.3.3"
 
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+web-sys = { version = "0.3.77", features = ["console", "Storage"] }
+
 [features]
 default = []
 import = ['dep:cbc', 'dep:rand_chacha']

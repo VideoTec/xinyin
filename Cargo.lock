@@ -1076,6 +1076,7 @@ dependencies = [
  "rand",
  "rand_chacha",
  "sha2",
+ "web-sys",
 ]
 
 [[package]]
