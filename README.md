@@ -1,6 +1,6 @@
 # 心印助记字密钥保护方案
 
-- [『心印助记字』演示](https://www.wangxiang.work/xinyin/demo/)
+- [『心印助记字』演示](https://www.wangxiang.work/xinyin-web/demo/)
 
 ## 1. 概述
 
