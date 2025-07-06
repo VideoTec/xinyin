@@ -5,6 +5,7 @@ wasm-pack build --no-pack --no-typescript --out-name xinyinWasm -t web
 # 将生成的 wasm 和 js 文件复制到指定目录
 OUT_DIR=../../../web/xinyin-web/src/xinyin
 cp ./pkg/xinyinWasm_bg.wasm "$OUT_DIR/xinyinWasm.wasm"
+cp ./pkg/xinyinWasm_bg.wasm "$OUT_DIR/../../public/assets/xinyinWasm.wasm"
 cp ./pkg/xinyinWasm.js "$OUT_DIR/xinyinWasm.js"
 
 # 先在文件顶部插入 @ts-nocheck
